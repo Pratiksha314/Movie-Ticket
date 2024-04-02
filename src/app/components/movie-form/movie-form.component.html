@@ -1,0 +1,54 @@
+<div class="row-display get-tickets-section movie-form">
+  <form [formGroup]="movieForm" (ngSubmit)="submitForm()">
+    <div class="booking-part">
+      <h1>{{header}}</h1>
+      <div class="row-display date">
+        <h3>Movie Title</h3>
+        <input class="input-field" type="text" formControlName="title" />
+      </div><br />
+      <div class="row-display date">
+        <h3>Movie Year</h3>
+        <input class="input-field" type="text" formControlName="year" />
+      </div><br />
+      <div class="row-display date">
+        <h3>Movie Runtime</h3>
+        <input class="input-field" type="text" formControlName="runTime" />
+      </div><br />
+      <div class="row-display date">
+        <h3>Movie Poster url</h3>
+        <input class="input-field" type="text" formControlName="poster" />
+      </div><br />
+      <div class="row-display timing" formArrayName="timings">
+        <h3>
+          Movie Timings
+        </h3>
+        <ng-container *ngFor="let time of movieForm.get('timings')['controls']; let i = index">
+          <input [formControlName]="i" formControlName="timings" />
+        </ng-container>
+      </div>
+      <div formGroupName="prices">
+        <table>
+          <tr>
+            <th>Tickets Amount</th>
+            <th>Price</th>
+          </tr>
+          <tr>
+            <td>Adult</td>
+            <td><input type="number" formControlName="adult" /></td>
+          </tr>
+          <tr>
+            <td>Under 18</td>
+            <td><input type="number" formControlName="under 18" /></td>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <button type="submit" class="btn-buy btn-edit">{{btnName}}</button>
+    </div>
+  </form>
+  <div class="movie-details-part">
+    <ng-container *ngIf="this.movieForm.get('poster').value">
+      <img [src]="this.movieForm.get('poster').value" alt="movie-poster" />
+    </ng-container>
+  </div>
+</div>

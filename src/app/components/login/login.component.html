@@ -1,0 +1,23 @@
+<div class="login-section">
+  <img src="https://lh3.googleusercontent.com/d/1MzvBvgw-Cx6HuV7uhVjzEa6xNXKiERgq?authuser=0g" />
+  <div class="input-section">
+    <h1>CINEBOOK</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <input placeholder="Enter your username" formControlName="username" /><br />
+      <ng-container *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched">
+        <small>*Username is required</small>
+      </ng-container>
+      <input placeholder="Enter your password" formControlName="password" type="password" /><br />
+      <ng-container *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+        <small>*Password is required</small>
+      </ng-container>
+      <a routerLink="/signup">New User ?</a>
+      <button>Login</button>
+      <ng-container *ngIf="invalidToLogin">
+        <h3
+          [ngStyle]="{'background-color': 'yellow', 'border-radius': '6px','color': 'rgb(239, 66, 43)', 'margin-top': '30px', 'margin-left': '170px','padding': '10px', 'width': 'fit-content'}">
+          Invalid Credentials !!</h3>
+      </ng-container>
+    </form>
+  </div>
+</div>

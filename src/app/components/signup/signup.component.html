@@ -1,0 +1,25 @@
+<div class="signup-section">
+  <img src="https://lh3.googleusercontent.com/d/1cCwxGwjO4HUIQspFmZxHKIP_Nc-ZW79s?authuser=0"/>
+  <div class="input-section">
+    <h1>CINEBOOK</h1>
+    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+      <input placeholder="Enter your username" formControlName="username"/><br/>
+      <ng-container *ngIf="signupForm.get('username').invalid && signupForm.get('username').touched">
+        <small>*Username is required</small>
+      </ng-container>
+      <input placeholder="Enter your password" formControlName="password"/><br/>
+      <ng-container *ngIf="signupForm.get('password').invalid && signupForm.get('password').touched">
+        <small>*Password is required</small>
+      </ng-container>
+      <input placeholder="Confirm your password" formControlName="confirmPassword"/><br/>
+      <ng-container *ngIf="signupForm.get('confirmPassword').invalid && signupForm.get('confirmPassword').touched">
+        <small>*Confirm Password is required</small>
+      </ng-container>
+      <a routerLink="/login">Already have an account ?</a>
+      <button>Signup</button>
+      <ng-container *ngIf="passwordNotMatching">
+        <h3 [ngStyle]="{'background-color': 'yellow', 'border-radius': '6px','color': 'rgb(239, 66, 43)', 'margin-top': '30px', 'margin-left': '200px','padding': '10px', 'width': 'fit-content'}">Invalid Data !!</h3>
+      </ng-container>
+    </form>
+  </div>
+</div>

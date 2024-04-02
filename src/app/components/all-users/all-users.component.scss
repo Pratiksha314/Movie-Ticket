@@ -1,0 +1,21 @@
+.list-table {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 50vw;
+
+  table {
+
+    th,
+    td {
+      padding: 20px;
+      border: 1px solid grey;
+      border-color: grey;
+      text-align: center;
+    }
+
+    td {
+      font-size: 16px;
+    }
+  }
+}

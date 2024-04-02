@@ -1,0 +1,93 @@
+<div class="purchased-section">
+  <br /> <br />
+  <app-common-title-header [headingTitle]="'Purchased Tickets'"></app-common-title-header>
+  <br />
+  <div class="main-section">
+    <div id="item-{{ ticket.movie.id }}" class="ticket-receipt" *ngFor="let ticket of purchasedTicketsList">
+      <div class="upper-section">
+        <img [src]="ticket.movie.poster" />
+        <div>
+          <mat-icon class="download"
+            (click)="downloadAsPDF(ticket.movie.title, ticket.movie.id)">cloud_download</mat-icon>
+          <h2>{{ ticket.movie.title | uppercase }}</h2>
+          <h4>Running time: {{ ticket.movie.runTime }}</h4>
+        </div>
+      </div>
+      <div class="middle-section">
+        <table class="table-one">
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>No. of Tickets</th>
+          </tr>
+          <tr>
+            <td>{{ ticket.ticketInfo.date }}</td>
+            <td>{{ ticket.ticketInfo.time }}</td>
+            <td>{{ ticket.ticketInfo.numberOfTickets}}</td>
+          </tr>
+          <br />
+          <tr>
+            <th>Hall</th>
+            <th>Row</th>
+            <th>Seats</th>
+          </tr>
+          <tr>
+            <td>{{ticket.ticketInfo.seatInfo.hall}}</td>
+            <td>{{ticket.ticketInfo.seatInfo.row}}</td>
+            <ng-container *ngFor="let seat of ticket.ticketInfo.seatInfo.seat">
+              <td class="seat-numbers">{{seat}}</td>
+            </ng-container>
+          </tr>
+        </table>
+      </div>
+      <div class="divided-section">
+        <div class="half-left-circle"></div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <div class="half-right-circle"></div>
+      </div>
+      <div class="lower-section">
+        <div class="lower-first-part">
+          <div>
+            <h3>Ticket Number</h3>
+            <h4>{{ticket.ticketInfo.seatInfo.ticketNumber}}</h4>
+          </div>
+          <div>
+            <h3>
+              Price
+            </h3>
+            <h4>Rs. {{ticket.ticketInfo.price}}</h4>
+          </div>
+        </div>
+        <div class="bar-code-section">
+          <ngx-barcode6 [bc-height]="50" [bc-format]="'CODE128'"
+            [bc-value]="ticket.ticketInfo.seatInfo.ticketNumber"></ngx-barcode6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

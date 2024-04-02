@@ -1,0 +1,72 @@
+.login-section {
+  display: inline-flex;
+  margin-top: 40px;
+
+  img {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 90vh;
+    width: auto;
+  }
+
+  .input-section {
+    background-color: #213d52;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 35vw;
+
+    h1 {
+      color: #5fb7ed;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin-bottom: 60px;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    input {
+      border: 0px;
+      border-radius: 6px;
+      font-size: 16px;
+      height: 7vh;
+      margin-left: 100px;
+      margin-top: 25px;
+      padding-left: 10px;
+      width: 20vw;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    input.ng-invalid.ng-touched {
+      border: 1px solid red;
+    }
+
+    small {
+      background-color: rgba(255, 255, 0, 0.932);
+      color: rgb(235, 12, 12);
+      margin-left: 100px;
+      position: absolute;
+    }
+
+    a {
+      margin-left: 350px;
+      margin-top: 35px;
+      position: absolute;
+    }
+
+    button {
+      background-color: #122a3c;
+      border: 0px;
+      border-radius: 20px;
+      font-size: 1.1rem;
+      margin-left: 130px;
+      margin-top: 90px;
+
+      height: 8vh;
+      width: 16vw;
+    }
+  }
+
+}

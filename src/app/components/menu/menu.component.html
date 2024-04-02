@@ -1,0 +1,28 @@
+<div class="menu-section">
+  <h1>CINEBOOK</h1>
+  <div class="menu-sub-section">
+    <div class="menu-titles" routerLinkActive="active">
+      <mat-icon class="icon">home</mat-icon><a routerLink="home">Home</a><br />
+    </div>
+    <ng-container *ngIf="personType === 'user'">
+      <div class="menu-titles" routerLinkActive="active">
+        <mat-icon class="icon">star_border</mat-icon><a routerLink='favourites'>Favourites</a><br />
+      </div>
+      <div class="menu-titles" routerLinkActive="active">
+        <mat-icon class="icon">account_balance_wallet</mat-icon><a routerLink='purchased'>Purchased</a><br />
+      </div>
+    </ng-container>
+  </div>
+  <div class="menu-bottom-section">
+    <ng-container *ngIf="personType === 'admin'">
+      <div class="menu-titles" routerLinkActive="active">
+        <mat-icon class="icon">movie_filter</mat-icon><a routerLink='add-movie'>Add Movie</a><br />
+      </div>
+    </ng-container>
+    <ng-container *ngIf="personType !== ''">
+      <div class="menu-titles" routerLinkActive="active" (click)="logout()">
+        <mat-icon class="icon">logout</mat-icon><a>Logout</a><br />
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="list-table">
+  <table>
+    <tr>
+      <th>USERNAME</th>
+      <th>TYPE</th>
+      <th>NO. OF PURCHASED TICKETS</th>
+    </tr>
+    <tr *ngFor="let person of peopleList">
+      <td>{{ person.username }}</td>
+      <td>{{ person.type }}</td>
+      <td>{{ person.purchasedMovies.length }}</td>
+    </tr>
+  </table>
+</div>

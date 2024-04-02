@@ -1,0 +1,14 @@
+<div class="for-admin">
+  <ng-container *ngIf="personData.type === 'admin'; else block">
+    <app-common-title-header [headingTitle]="'Admin Page'"></app-common-title-header> <br /><br />
+  </ng-container>
+  <ng-template #block>
+    <app-common-title-header [headingTitle]="'User Information'"></app-common-title-header> <br /><br />
+  </ng-template>
+  <h3>Username : {{ personData.username }}</h3>
+  <h3>Password : {{ personData.password }}</h3><br /><br />
+  <app-common-title-header [headingTitle]="''"></app-common-title-header> <br />
+  <ng-container *ngIf="personData.type === 'admin'">
+    <app-all-users></app-all-users>
+  </ng-container>
+</div>

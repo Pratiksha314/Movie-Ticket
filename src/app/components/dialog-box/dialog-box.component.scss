@@ -1,0 +1,47 @@
+.dialog {
+  background-color: #576e8eef;
+  border: 2px solid whitesmoke;
+  border-radius: 20px;
+  height: 40vh;
+  left: 550px;
+  position: fixed;
+  text-transform: uppercase;
+  top: 250px;
+  width: 40vw;
+
+  h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  button {
+    background-color: #258dd8;
+    border: 0px;
+    border-radius: 5px;
+    font-size: large;
+    height: 5vh;
+    margin-left: 230px;
+    margin-top: 50px;
+    width: 8vw;
+  }
+
+  .bottom {
+    display: inline-flex;
+    margin-top: 50px;
+    margin-left: 135px;
+
+    button {
+      background-color: rgb(233, 236, 240);
+      color: black;
+      font-size: medium;
+      height: 4vh;
+      margin-left: 20px;
+      margin-top: -5px;
+      width: 10vh;
+    }
+  }
+
+  ;
+}

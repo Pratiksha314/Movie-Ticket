@@ -1,0 +1,62 @@
+.today-released-section {
+  border-radius: 14px;
+  margin-left: 40px;
+  width: 75%;
+
+  img {
+    border-radius: 14px;
+    height: 45vh;
+    object-fit: cover;
+    width: 125%;
+  }
+
+  .timings-div {
+    background-color: #5c5756bd;
+    border-radius: 14px;
+    margin-left: 40px;
+    margin-top: -330px;
+    min-height: 20vh;
+    padding: 20px;
+    position: relative;
+    width: max-content;
+
+    h4 {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .timings {
+      display: inline;
+
+      h3 {
+        background-color: #97929bd1;
+        font-weight: 400;
+        margin-top: 14px;
+        padding: 7px 20px 7px 20px;
+        width: max-content;
+      }
+
+      .hour {
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+        margin-left: 13px;
+      }
+
+      .minute {
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-left: 73px;
+        margin-top: -58px;
+      }
+    }
+
+    button {
+      background-color: #007dcb;
+      border: 0px;
+      border-radius: 10px;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.sub-heading-title {
+  margin-left: 40px;
+  margin-top: 60px;
+
+  h3 {
+    font-weight: 500;
+  }
+
+  .line {
+    border: 0.7px solid #5a7fa7;
+    height: 0;
+    margin-left: 140px;
+    margin-top: -28px;
+    width: 60vw;
+  }
+
+  button {
+    background-color: #162235;
+    border: 0px;
+    color: rgb(226, 219, 219);
+    float: right;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-right: 30px;
+  }
+}

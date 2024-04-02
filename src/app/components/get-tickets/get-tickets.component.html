@@ -1,0 +1,63 @@
+<div class="row-display get-tickets-section">
+  <form #templateForm="ngForm" (ngSubmit)="buyTickets()">
+    <div class="booking-part">
+      <h1>Book Tickets</h1>
+      <div class="row-display date">
+        <h3>Select the date</h3>
+        <input type="date" name="date" [(ngModel)]="addPurchasedTicketInformation.date" #date="ngModel" />
+      </div><br />
+      <hr />
+      <div class="row-display timing">
+        <h3>
+          Select movie timing
+        </h3>
+        <button type="button" [class.active]="selectedIndex === i"
+          *ngFor="let time of movieDetails.timings; let i = index" (click)="timingSelection(i, time)">{{ time
+          }}</button>
+      </div>
+      <hr />
+
+      <table>
+        <tr>
+          <th>Select your tickets</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+        <tr>
+          <td>Adult</td>
+          <td>Rs. {{movieDetails.prices.adult}}</td>
+          <td>
+            <select [(ngModel)]="adultTicketSelection" (change)="onAdultSelectionChange($event)">
+              <option *ngFor="let number of numberTicketsSelection" [value]="number">{{number}}</option>
+            </select>
+          </td>
+          <td>Rs. {{ adultTicketAmount * adultTicketSelection }}</td>
+        </tr>
+        <tr>
+          <td>Under 18</td>
+          <td>Rs. {{movieDetails.prices['under 18']}}</td>
+          <td>
+            <select [(ngModel)]="under18TicketSelection" (change)="onUnder18SelectionChange($event)">
+              <option *ngFor="let number of numberTicketsSelection" [value]="number">{{number}}</option>
+            </select>
+          </td>
+          <td>Rs. {{ under18TicketAmount * under18TicketSelection }}</td>
+        </tr>
+      </table>
+      <br />
+      <hr />
+      <div class="row-display total-amount">
+        <h2>TOTAL AMOUNT</h2>
+        <h2>Rs. {{ addPurchasedTicketInformation.details.price }}</h2>
+      </div>
+      <ng-container *ngIf="personType === 'user'">
+        <button type="submit" class="btn-buy">BUY</button>
+      </ng-container>
+    </div>
+  </form>
+  <div class="movie-details-part">
+    <img [src]="movieDetails.poster" />
+    <h1>{{movieDetails.title}} ( {{movieDetails.year}} )</h1>
+  </div>
+</div>

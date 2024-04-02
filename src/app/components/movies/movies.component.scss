@@ -1,0 +1,66 @@
+.movies {
+  display: inline-flex;
+  flex-direction: row;
+  height: 45vh;
+  justify-content: space-around;
+  margin-left: 90px;
+  margin-top: 30px;
+
+  .movie-details {
+    margin-right: 14px;
+    width: 16vw;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .delete-icon {
+      margin-left: 30px;
+    }
+
+    img {
+      border-radius: 12px;
+      height: 35vh;
+      width: 16vw;
+    }
+
+    .movie-title {
+      font-size: 1.4rem;
+      text-align: center;
+      text-transform: capitalize;
+
+      .fav-icon {
+        color: rgb(246, 213, 130);
+        margin-left: 5px;
+        position: absolute;
+      }
+    }
+
+    .movie-timings {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 5.3vw;
+
+      .time {
+        color: rgb(220, 213, 213);
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 8px;
+      }
+    }
+
+    button {
+      background-color: #2683c6;
+      border: 0px;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      font-size: 12px;
+      height: 4vh;
+      margin-left: -234px;
+      margin-top: -340px;
+      position: absolute;
+      width: 6vw;
+    }
+  }
+}

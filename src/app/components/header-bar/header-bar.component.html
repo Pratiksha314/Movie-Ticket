@@ -1,0 +1,20 @@
+<div class="header">
+  <div class="search-bar">
+    <!-- search  -->
+    <mat-icon class="search-icon">search</mat-icon>
+    <input placeholder="Search Movies" />
+  </div>
+  <div class="header-icons">
+    <!-- icons -->
+    <ng-container *ngIf="personType !== '' else block">
+      <mat-icon class="icons">notifications_none</mat-icon>
+      <mat-icon class="icons" routerLink="/for-admin">account_circle</mat-icon>
+    </ng-container>
+    <ng-template #block>
+      <div class="menu-titles" routerLinkActive="active" routerLink="/login">
+        <mat-icon class="icon">login</mat-icon>
+        <button>Login</button>
+      </div>
+    </ng-template>
+  </div>
+</div>

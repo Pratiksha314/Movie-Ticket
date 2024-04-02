@@ -1,0 +1,25 @@
+<div class="movies">
+  <div class="movie-details" *ngFor="let movie of moviesList">
+    <ng-container *ngIf="personType === 'admin'">
+      <mat-icon class="edit-icon" (click)="editMovie(movie.id)">edit</mat-icon>
+      <mat-icon class="delete-icon" (click)="deleteMovie(movie.id, moviesList)">delete</mat-icon>
+    </ng-container>
+    <img [src]="movie.poster" [alt]="movie.title + 'Poster'" (click)="tickets(movie)" />
+    <h3 class="movie-title">{{movie.title}}
+      <ng-container *ngIf="personType === 'user' ">
+
+        <mat-icon class="fav-icon" (click)="addFavourite(movie.id)">star_border</mat-icon>
+        <ng-container *ngIf="favourite">
+          <mat-icon class="fav-icon" (click)="removeFavourite(movie.id)">star</mat-icon>
+        </ng-container>
+      </ng-container>
+    </h3>
+    <div class="movie-timings" *ngFor="let time of movie.timings">
+      <h5 class="time">{{time}}</h5>
+    </div>
+    <button class="movie-details button">Get Tickets</button>
+  </div>
+</div>
+<ng-container *ngIf="showLoginDialog">
+  <app-dialog-box></app-dialog-box>
+</ng-container>
